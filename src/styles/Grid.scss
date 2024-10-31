@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto; /* Center the item horizontally */
+  }
+  
+  .grid-item {
+    margin: 70px auto; /* Center the item horizontally */
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .grid-item-hid{
+    display: hidden;
+  }
+  @media (min-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr 1fr;
+    }
+    .grid-item{
+      width: 70%;
+    }
+  }
+  

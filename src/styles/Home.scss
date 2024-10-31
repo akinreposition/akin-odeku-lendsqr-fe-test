@@ -1,0 +1,23 @@
+.home-body{
+    background: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.form{
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    & .header{
+        color: #213F7D;
+    }
+    & .subTitle{
+        color: #545F7D;
+        width: 100%;
+    }
+}

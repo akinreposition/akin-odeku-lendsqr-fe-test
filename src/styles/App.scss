@@ -1,0 +1,14 @@
+@import "variables";
+body {
+    font-family: Arial, sans-serif;
+    behavior: smooth;
+}
+
+.app {
+    background-color: $primary-white;
+    text-align: center;
+    width: 100vw;
+    height: 100hv;
+}
+
+  
