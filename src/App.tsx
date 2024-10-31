@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
+import Dashboard from './pages/Dashboard';
 import './styles/App.scss';
 
 const App: React.FC = () => {
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </Router>
