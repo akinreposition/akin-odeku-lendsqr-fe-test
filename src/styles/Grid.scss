@@ -8,6 +8,13 @@
     margin: 0 auto; /* Center the item horizontally */
   }
   
+  .grid-item1 {
+    margin: 70px auto; /* Center the item horizontally */
+    background-color: #fffffff6;
+    border-right: #ffffffd0;
+    padding: 20px;
+    text-align: center;
+  }
   .grid-item {
     margin: 70px auto; /* Center the item horizontally */
     background-color: #fff;
@@ -16,14 +23,18 @@
   }
   
   .grid-item-hid{
-    display: hidden;
+    display: none;
   }
   @media (min-width: 600px) {
     .grid-container {
       grid-template-columns: 1fr 1fr;
+      margin-top: 50px;
     }
     .grid-item{
       width: 70%;
+    }
+    .grid-item-hid{
+      display: block;
     }
   }
   

@@ -1,3 +1,4 @@
+@import "variables";
 .home-body{
     background: #FFFFFF;
     justify-content: center;
@@ -10,14 +11,75 @@
 }
 
 .form{
-    justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: $primary-white;
     & .header{
         color: #213F7D;
+        text-align: left;
     }
     & .subTitle{
         color: #545F7D;
         width: 100%;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+}
+.form-input {
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.form-input input {
+    width: 90%;
+    height: 30px; /* Increased height for better visibility */
+    border: 2px solid #545F7D26;
+    color: #213F7D;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.form-input input::placeholder {
+    color: #213F7D;
+    font-size: 14px;
+}
+
+.form-input .password-toggle {
+    position: absolute;
+    top: 40%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px; /* Adjust font size as needed */
+    color: #213F7D;
+}
+.forget-password{
+    color: #39CDCC;
+    text-align: left;
+    margin-top: -5px;
+    text-transform: capitalize;
+}
+.login{
+    background: #39CDCC;
+    border: 2px solid #39CDCC;
+    border-radius: 5px;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    width: 110%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+}
+@media (min-width: 600px) {
+    .form-input input {
+        width: 100%;
+        padding: 12px 10px;
+    }
+    .login{
+        width: 105%;
     }
 }
