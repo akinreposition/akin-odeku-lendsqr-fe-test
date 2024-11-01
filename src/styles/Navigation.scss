@@ -1,0 +1,176 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    background: #fff;
+    // background: #fbfbfd;
+    width: 100%;
+  }
+  
+  .topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .logo p {
+    background: url(../assets/lendsqrLogo.svg) no-repeat;
+    background-size: contain;
+    height: 14px;
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menu-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .menu-side a,
+  .logout p {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .menu-side a:hover,
+  .logout p:hover {
+    color: #00adef;
+  }
+  
+  .menuback {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 30px;
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
+    position: relative;
+    gap: 4px;
+  }
+  
+  .menuback:hover,
+  .menuback:active,
+  .menuback:focus {
+    color: #059fd5;
+  }
+  
+  .menuback:hover:after {
+    transform: scale(1);
+    transform-origin: bottom center;
+  }
+  
+  .menuback:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .menu-side a,
+  .logout p {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 auto;
+  }
+  
+  .menu-side a:hover,
+  .logout p:hover {
+    color: #00adef;
+  }
+  
+  .logout p {
+    margin-left: -10px;
+  }
+  
+  .user-info {
+    width: 32px;
+    height: 32px;
+    background: #00adef;
+    border-radius: 100%;
+    padding: 9px 6px;
+    margin-left: 30px;
+  }
+  
+  .user-info p {
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  
+    input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      outline: none;
+    }
+  
+    button {
+      background: #39CDCC;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+  
+  .dropdown-icon {
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .dropdown-menu li {
+    list-style: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
