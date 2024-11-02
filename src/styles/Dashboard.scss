@@ -1,0 +1,13 @@
+.container{
+    margin: 0 auto;
+    margin-top: 10rem;
+    max-width: 68.0625rem;
+    background-color: black;
+    justify-content: center;
+    text-align: center;
+}
+.title{
+    display: flex;
+    align-self: flex-start;
+    color: $secondary-blue;
+}

@@ -18,16 +18,18 @@
   }
   
   .logo p {
+    display: none;
     background: url(../assets/lendsqrLogo.svg) no-repeat;
     background-size: contain;
     height: 14px;
     width: 70px;
     align-items: center;
     justify-content: center;
+    margin-top: 40px;
   }
   
   .menu-side {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
@@ -107,6 +109,7 @@
   }
   
   .user-info {
+    display: none;
     width: 32px;
     height: 32px;
     background: #00adef;
@@ -172,5 +175,31 @@
 
     &:hover {
       background-color: #f0f0f0;
+    }
+  }
+  @media(min-width: 600px){
+    .logo p {
+      display: block;
+      background: url(../assets/lendsqrLogo.svg) no-repeat;
+      background-size: contain;
+      height: 14px;
+      width: 70px;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .user-info {
+      width: 32px;
+      height: 32px;
+      background: #00adef;
+      border-radius: 100%;
+      padding: 9px 6px;
+      margin-left: 30px;
+    }
+    .menu-side {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
   }

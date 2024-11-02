@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-
-import './styles/App.scss';
 import Navigation from './components/Navigation';
+import './styles/index.scss';
+
 
 const App: React.FC = () => {
   return (

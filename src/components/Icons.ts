@@ -1,3 +1,4 @@
+// import { SvgIconProps } from "@mui/material/SvgIcon";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import WebOutlinedIcon from "@mui/icons-material/WebOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
@@ -8,9 +9,11 @@ import GppGoodOutlinedIcon from "@mui/icons-material/GppGoodOutlined";
 import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
 import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
 import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
-
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+
+// Define the Icon type to be a React component
+
 
 export {
   HomeOutlinedIcon as HomeIcon,

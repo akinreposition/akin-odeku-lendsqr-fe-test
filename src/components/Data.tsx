@@ -1,3 +1,4 @@
+// import { SvgIconProps } from "@mui/material/SvgIcon";
 import {
   HomeIcon,
   LayoutIcon,
@@ -10,13 +11,16 @@ import {
   WizardIcon,
   ModalIcon,
 } from "./Icons";
-  
-  interface SidebarItem {
-    id: number;
-    name: string;
-    path: string;
-    icon: React.ReactElement;
-  }
+
+// type IconComponent = (props: SvgIconProps) => JSX.Element;
+
+
+interface SidebarItem {
+  id: number;
+  name: string;
+  path: string;
+  icon: React.ReactElement;
+}
 
   export const SIDEBAR_DATA: SidebarItem[] = [
     {
@@ -27,27 +31,27 @@ import {
     },
     {
       id: 2,
+      name: "users",
+      path: "users",
+      icon: <UserIcon />,
+    },
+    {
+      id: 3,
       name: "layouts",
       path: "layouts",
       icon: <LayoutIcon />,
     },
     {
-      id: 3,
+      id: 4,
       name: "calendar",
       path: "calendar",
       icon: <CalendarIcon />,
     },
     {
-      id: 4,
+      id: 5,
       name: "invoice",
       path: "invoice",
       icon: <InvoiceIcon />,
-    },
-    {
-      id: 5,
-      name: "users",
-      path: "users",
-      icon: <UserIcon />,
     },
     {
       id: 6,

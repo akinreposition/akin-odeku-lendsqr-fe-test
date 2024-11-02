@@ -1,8 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-// import { DynamicItem, Sidebar } from "./SideBar/Index";
 import  Sidebar from "./SideBar/Index"
 import Items from "./Routes/Items"
-// import { Items as DynamicItem } from "./Routes/Items";
 import { SIDEBAR_DATA as dummyData } from "./Data";
 
 import"../styles/SideBar.scss"
