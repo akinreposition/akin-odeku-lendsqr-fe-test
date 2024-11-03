@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import SidebarItems from "./SidebarItems";
-import lendsqrLogo from "../../assets/lendsqrLogo.svg";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown"; // New import
+import { Menu, MenuItem, IconButton } from "@mui/material"; // New imports
+// import lendsqrLogo from "../../assets/lendsqrLogo.svg";
+// import { Link } from "react-router-dom";
 
 type DisplaySidebarProps = {
-  displaySidebar: number;
+  displaySidebar: boolean;
 };
 // const MOBILE_VIEW = window.innerWidth < 468;
 const MOBILE_VIEW = window.innerWidth < 600;
@@ -12,44 +16,64 @@ const MOBILE_VIEW = window.innerWidth < 600;
 export default function Sidebar({ children }:  { children: React.ReactNode }) {
 
   const [displaySidebar, setDisplaySidebar] = useState(!MOBILE_VIEW);
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null); // State for dropdown menu
 
   const handleSidebarDisplay = (e: any) => {
     e.preventDefault();
-    if (window.innerWidth > 468) {
+    if (window.innerWidth > 600) {
       setDisplaySidebar(!displaySidebar);
     } else {
-      // setDisplaySidebar(false);
-      setDisplaySidebar(displaySidebar);
+      setDisplaySidebar(false);
+      // setDisplaySidebar(displaySidebar);
     }
   };
 
+  const handleOpenMenu = (event: React.BaseSyntheticEvent) => {
+    setAnchorEl(event.currentTarget as HTMLElement);
+  };
+
+  const handleCloseMenu = () => {
+    setAnchorEl(null); 
+  };
   return (
     <React.Fragment>
       <SidebarContainer displaySidebar={displaySidebar}>
         <SidebarWrapper>
           <SidebarLogoWrapper displaySidebar={displaySidebar}>
             {/* Logo wrapper starts */}
-            <SidebarLogo href="#">
-              <span className="app-brand-logo demo">
-                <img src={lendsqrLogo} alt="Brand logo" />
-              </span>
-              <SidebarBrand
-                displaySidebar={displaySidebar}
-                className="app__brand__text"
+            {/* <Link to='/#'>
+              <span className="app-brand-logo demo"
               >
-                Frest
+                <img 
+                  src={lendsqrLogo} 
+                  alt="Brand logo"
+                  className="app__brand__text"
+                  />
+                  </span>
+                  </Link> */}
+            <SidebarLogo href="#">
+              <SidebarBrand displaySidebar={displaySidebar}>
+                <BusinessCenterIcon />
+                Switch Organization
               </SidebarBrand>
+              <IconButton onClick={handleOpenMenu}>
+                <ArrowDropDownIcon /> {/* New dropdown icon */}
+              </IconButton>
+              <Menu
+                id="menu-basic"
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleCloseMenu}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                <MenuItem onClick={handleCloseMenu}>Organization 1</MenuItem>
+                <MenuItem onClick={handleCloseMenu}>Organization 2</MenuItem>
+                {/* Add more MenuItems for additional organizations */}
+              </Menu>
             </SidebarLogo>
             {/* Logo wrapper ends */}
-            {/* Toggle button */}
-            <SidebarToggler
-              displaySidebar={displaySidebar}
-              onClick={handleSidebarDisplay}
-            >
-              <div className="outer__circle">
-                <div className="inner__circle" />
-              </div>
-            </SidebarToggler>
           </SidebarLogoWrapper>
             {/* Render the SidebarItems component */}
           <SidebarItems displaySidebar={displaySidebar} />
@@ -67,7 +91,7 @@ export const Children = styled.div<DisplaySidebarProps>`
   width: 100%;
   height: 100%;
   margin-left: ${({ displaySidebar }) => (displaySidebar ? "15rem" : "5rem")};
-  @media (max-width: 468px) {
+  @media (max-width: 600px) {
     margin-left: 5rem;
   }
 `;
@@ -87,7 +111,7 @@ export const SidebarLogoWrapper = styled.div<DisplaySidebarProps>`
   justify-content: ${({ displaySidebar }) =>
     displaySidebar ? "space-between" : "center"};
   align-items: center;
-  @media (max-width: 468px) {
+  @media (max-width: 600px) {
     justify-content: center;
   }
 `;
@@ -96,19 +120,24 @@ export const SidebarLogo = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 468px) {
+  @media (max-width: 600px) {
     display: none;
   }
 `;
 
 export const SidebarBrand = styled.span<DisplaySidebarProps>`
-  display: ${({ displaySidebar }) => (displaySidebar ? "block" : "none")};
+  display: ${({ displaySidebar }) => (displaySidebar ? "flex" : "none")};
+  font-size:  .8rem;
+  color: #7c7788;
+  align-items: center;
+  gap: 6px;
+  margin-left: -10px;
 `;
 
 export const SidebarToggler = styled.button<DisplaySidebarProps>`
   cursor: pointer;
   display: ${({ displaySidebar }) => (displaySidebar ? "block" : "none")};
-  @media (max-width: 468px) {
+  @media (max-width: 600px) {
     display: block;
   }
 `;
@@ -151,7 +180,7 @@ export const SidebarContainer = styled.div<DisplaySidebarProps>`
   width: ${({ displaySidebar }) => (displaySidebar ? "15rem" : "5rem")};
   height: 100vh;
   padding: 0.75rem;
-  background: #f3f4f4;
+  background: #fff;
   transition: width 350ms ease;
   border-right: 1px solid #d4d8dd;
   overflow-x: hidden;
@@ -163,7 +192,7 @@ export const SidebarContainer = styled.div<DisplaySidebarProps>`
   &:hover {
     ${({ displaySidebar }) =>
       !displaySidebar && "box-shadow: 8px 0px 12px 0px rgba(0,0,0,0.1)"};
-    @media (min-width: 468px) {
+    @media (min-width: 600px) {
       width: ${({ displaySidebar }) => !displaySidebar && "15rem"};
       ${SidebarLogoWrapper} {
         justify-content: ${({ displaySidebar }) =>
@@ -200,7 +229,7 @@ export const SidebarContainer = styled.div<DisplaySidebarProps>`
       background: #d5e0f3;
     }
   }
-  @media (max-width: 468px) {
+  @media (max-width: 600px) {
     width: 5rem;
   }
 `;

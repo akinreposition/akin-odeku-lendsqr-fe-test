@@ -12,8 +12,11 @@ import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
+import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
+import GroupsIcon from '@mui/icons-material/Groups';
 // Define the Icon type to be a React component
-
+import userwithloan from '../assets/userwithloan.svg';
+import userwithsavings from '../assets/userswithsavings.svg';
 
 export {
   HomeOutlinedIcon as HomeIcon,
@@ -28,4 +31,10 @@ export {
   InputOutlinedIcon as ModalIcon,
   ArrowBackIcon,
   ArrowRightOutlinedIcon as ArrowIcon,
+
+  PeopleOutlineIcon as UsersIcon,
+  GroupsIcon as ActiveUsersIcon,
+  userwithloan as UserWithLoanIcon,
+  userwithsavings as UserWithSavingsIcon,
 };
+

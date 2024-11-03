@@ -1,4 +1,3 @@
-// import { SvgIconProps } from "@mui/material/SvgIcon";
 import {
   HomeIcon,
   LayoutIcon,
@@ -11,9 +10,6 @@ import {
   WizardIcon,
   ModalIcon,
 } from "./Icons";
-
-// type IconComponent = (props: SvgIconProps) => JSX.Element;
-
 
 interface SidebarItem {
   id: number;

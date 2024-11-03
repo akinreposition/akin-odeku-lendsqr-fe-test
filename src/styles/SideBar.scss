@@ -42,9 +42,10 @@
     overflow: hidden;
   }
   
-  @media screen and (min-width: 468px) {
+  @media screen and (min-width: 600px) {
     #page {
-      font-size: 3rem;
+      // font-size: 3rem;
+      font-size: 1rem;
     }
   
     .btn {
